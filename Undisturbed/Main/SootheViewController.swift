@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SootheViewController.swift
 //  Undisturbed
 //
 //  Created by Monica Qiu on 9/1/23.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SootheViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+
+        
     }
 
-
 }
-
