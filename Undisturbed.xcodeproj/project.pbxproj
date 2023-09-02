@@ -17,6 +17,7 @@
 		8D91A8302AA2AA1B005EED2A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A82F2AA2AA1B005EED2A /* ProfileViewController.swift */; };
 		8D91A8332AA2AD2A005EED2A /* TriggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A8322AA2AD2A005EED2A /* TriggerModel.swift */; };
 		8D91A8352AA2ADE3005EED2A /* TriggerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A8342AA2ADE3005EED2A /* TriggerCollectionViewCell.swift */; };
+		8D91A8372AA2C904005EED2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A8362AA2C904005EED2A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8D91A82F2AA2AA1B005EED2A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8D91A8322AA2AD2A005EED2A /* TriggerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerModel.swift; sourceTree = "<group>"; };
 		8D91A8342AA2ADE3005EED2A /* TriggerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerCollectionViewCell.swift; sourceTree = "<group>"; };
+		8D91A8362AA2C904005EED2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				8D91A81C2AA2A697005EED2A /* Assets.xcassets */,
 				8D91A8132AA2A695005EED2A /* AppDelegate.swift */,
 				8D91A8152AA2A695005EED2A /* SceneDelegate.swift */,
+				8D91A8362AA2C904005EED2A /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D91A8302AA2AA1B005EED2A /* ProfileViewController.swift in Sources */,
+				8D91A8372AA2C904005EED2A /* Extensions.swift in Sources */,
 				8D91A82C2AA2A93F005EED2A /* TabBarViewController.swift in Sources */,
 				8D91A82A2AA2A937005EED2A /* SootheViewController.swift in Sources */,
 				8D91A8142AA2A695005EED2A /* AppDelegate.swift in Sources */,
