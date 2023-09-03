@@ -10,6 +10,13 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
+    let emailLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.textColor = .black
+        return label
+    }()
+    
     let signoutBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Sign Out", for: .normal)
@@ -21,6 +28,13 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
+        view.addSubview(emailLabel)
+        if let email = Auth.auth().currentUser?.email {
+            emailLabel.text = "Email: \(email)"
+        } else {
+            emailLabel.text = "Email: Unknown"
+        }
+        
         view.addSubview(signoutBtn)
         signoutBtn.addTarget(self, action: #selector(signOutBtnTapped), for: .touchUpInside)
     }
@@ -29,6 +43,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         signoutBtn.frame = CGRect(x: 100, y: 100, width: view.width - 200, height: 100)
+        emailLabel.frame = CGRect(x: 30, y: signoutBtn.bottom + 50, width: view.width - 60, height: 50)
     }
     
     @objc private func signOutBtnTapped() {
@@ -49,16 +64,5 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
