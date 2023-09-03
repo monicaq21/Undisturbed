@@ -18,7 +18,9 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     
     var slider: UISlider = {
         let slider = UISlider()
-        slider.value = 0.5
+        slider.minimumValue = 1
+        slider.maximumValue = 5
+        slider.value = 3
         return slider
     }()
     
@@ -56,6 +58,8 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     
     @objc private func sliderValueChanged() {
         let value = slider.value
+        let nearestValue = floor(value + 0.5)
+        slider.setValue(nearestValue, animated: false)
 //        delegate.updatePreferenceValue(to: value) xxx
     }
     
