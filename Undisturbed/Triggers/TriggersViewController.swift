@@ -58,7 +58,7 @@ class TriggersViewController: UIViewController {
         triggers.append(Trigger(name: "Chalk Scratching"))
         triggers.append(Trigger(name: "Yawning"))
         triggers.append(Trigger(name: "Tapping"))
-        triggers.append(Trigger(name: "Coughing"))
+        triggers.append(Trigger(name: "Sniffing"))
         
         DispatchQueue.main.async {
             self.collectionView.reloadData() // refresh in main thread

@@ -45,10 +45,18 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .systemMint
+        
         contentView.addSubview(triggerLabel)
         contentView.addSubview(slider)
         contentView.addSubview(disgustingLabel)
         contentView.addSubview(bearableLabel)
+        
+        slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+    }
+    
+    @objc private func sliderValueChanged() {
+        let value = slider.value
+//        delegate.updatePreferenceValue(to: value) xxx
     }
     
     required init?(coder: NSCoder) {
