@@ -17,7 +17,7 @@ class SootheViewController: UIViewController {
     
     var dropdownMenu: UIButton = {
         let button = UIButton()
-        button.setTitle("Placeholder for dropdown", for: .normal)
+        button.setTitle("Tab to switch to paper sound", for: .normal)
         button.backgroundColor = .green
         return button
     }()
