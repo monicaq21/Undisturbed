@@ -42,9 +42,9 @@ class TriggersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        title = "Misophonic Triggers"
         
         collectionView.register(TriggerCollectionViewCell.self, forCellWithReuseIdentifier: TriggerCollectionViewCell.identifier)
-        collectionView.backgroundColor = .systemGray
         view.addSubview(collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self

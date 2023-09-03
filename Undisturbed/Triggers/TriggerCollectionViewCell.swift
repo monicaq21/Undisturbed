@@ -46,7 +46,9 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .systemMint
+        
+        contentView.layer.cornerRadius = 15
+        contentView.layer.masksToBounds = true
         
         contentView.addSubview(triggerLabel)
         contentView.addSubview(slider)
@@ -61,6 +63,7 @@ class TriggerCollectionViewCell: UICollectionViewCell {
         let nearestValue = floor(value + 0.5)
         slider.setValue(nearestValue, animated: false)
 //        delegate.updatePreferenceValue(to: value) xxx
+        updateBackgroundColor()
     }
     
     required init?(coder: NSCoder) {
@@ -69,6 +72,7 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         triggerLabel.frame = CGRect(x: 10, y: 0, width: contentView.width - 20, height: contentView.height / 3 * 2)
         slider.frame = CGRect(x: 10, y: triggerLabel.bottom, width: contentView.width - 20, height: contentView.height / 3)
         
@@ -84,5 +88,26 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     
     func configure(with model: Trigger) {
         triggerLabel.text = model.name
+        slider.value = 2 // xxx change later
+        updateBackgroundColor()
+    }
+    
+    private func updateBackgroundColor() {
+        let value = slider.value
+        
+        DispatchQueue.main.async {
+            if (value == 5) {
+                self.contentView.backgroundColor = .blue
+            } else if (value == 4) {
+                self.contentView.backgroundColor = .green
+            } else if (value == 3) {
+                self.contentView.backgroundColor = .yellow
+            } else if (value == 2) {
+                self.contentView.backgroundColor = .orange
+            } else if (value == 1) {
+                self.contentView.backgroundColor = .red
+            }
+        }
+        
     }
 }
