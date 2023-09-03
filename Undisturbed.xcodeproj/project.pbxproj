@@ -26,6 +26,10 @@
 		8D91A8352AA2ADE3005EED2A /* TriggerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A8342AA2ADE3005EED2A /* TriggerCollectionViewCell.swift */; };
 		8D91A8372AA2C904005EED2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A8362AA2C904005EED2A /* Extensions.swift */; };
 		8D91A83C2AA431C6005EED2A /* SceneOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A83B2AA431C6005EED2A /* SceneOption.swift */; };
+		8DCD56672AA5233400683D19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD56652AA5233400683D19 /* LoginViewController.swift */; };
+		8DCD56682AA5233400683D19 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD56662AA5233400683D19 /* LoginViewController.xib */; };
+		8DCD566B2AA5234100683D19 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD56692AA5234100683D19 /* SignupViewController.swift */; };
+		8DCD566C2AA5234100683D19 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD566A2AA5234100683D19 /* SignupViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		8D91A8342AA2ADE3005EED2A /* TriggerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8D91A8362AA2C904005EED2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8D91A83B2AA431C6005EED2A /* SceneOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneOption.swift; sourceTree = "<group>"; };
+		8DCD56652AA5233400683D19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8DCD56662AA5233400683D19 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		8DCD56692AA5234100683D19 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		8DCD566A2AA5234100683D19 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,10 @@
 		8DCD56602AA5227400683D19 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				8DCD56652AA5233400683D19 /* LoginViewController.swift */,
+				8DCD56662AA5233400683D19 /* LoginViewController.xib */,
+				8DCD56692AA5234100683D19 /* SignupViewController.swift */,
+				8DCD566A2AA5234100683D19 /* SignupViewController.xib */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -209,6 +221,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCD566C2AA5234100683D19 /* SignupViewController.xib in Resources */,
+				8DCD56682AA5233400683D19 /* LoginViewController.xib in Resources */,
 				8D91A8202AA2A697005EED2A /* LaunchScreen.storyboard in Resources */,
 				8D41AD0A2AA51E7D001C572E /* GoogleService-Info.plist in Resources */,
 				8D89A04B2AA435D900F9674F /* ARViewController.xib in Resources */,
@@ -232,7 +246,9 @@
 				8D91A82E2AA2A9FC005EED2A /* TriggersViewController.swift in Sources */,
 				8D91A8352AA2ADE3005EED2A /* TriggerCollectionViewCell.swift in Sources */,
 				8D91A8162AA2A695005EED2A /* SceneDelegate.swift in Sources */,
+				8DCD566B2AA5234100683D19 /* SignupViewController.swift in Sources */,
 				8D91A8332AA2AD2A005EED2A /* TriggerModel.swift in Sources */,
+				8DCD56672AA5233400683D19 /* LoginViewController.swift in Sources */,
 				8D89A04A2AA435D900F9674F /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
