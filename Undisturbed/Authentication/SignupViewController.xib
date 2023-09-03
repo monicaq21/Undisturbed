@@ -22,39 +22,39 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wwb-Wf-KrN">
-                    <rect key="frame" x="30" y="229" width="333" height="369"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wwb-Wf-KrN">
+                    <rect key="frame" x="30" y="239" width="333" height="359"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4I-MU-yZa">
-                            <rect key="frame" x="0.0" y="0.0" width="333" height="45"/>
+                            <rect key="frame" x="0.0" y="0.0" width="333" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhP-wK-Z3a">
-                            <rect key="frame" x="0.0" y="65" width="333" height="44.666666666666657"/>
+                            <rect key="frame" x="0.0" y="50" width="333" height="50.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amn-ah-o1P">
-                            <rect key="frame" x="0.0" y="129.66666666666669" width="333" height="45"/>
+                            <rect key="frame" x="0.0" y="120.33333333333331" width="333" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a complex password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uSp-BG-Guw">
-                            <rect key="frame" x="0.0" y="194.66666666666669" width="333" height="44.666666666666657"/>
+                            <rect key="frame" x="0.0" y="170.33333333333331" width="333" height="50.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-4G-MNk" userLabel="Error Label">
-                            <rect key="frame" x="0.0" y="259.33333333333331" width="333" height="45"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-4G-MNk" userLabel="Error Label">
+                            <rect key="frame" x="0.0" y="240.66666666666669" width="333" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" systemColor="systemRedColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="448-fm-m4K">
-                            <rect key="frame" x="0.0" y="324.33333333333337" width="333" height="44.666666666666686"/>
+                            <rect key="frame" x="0.0" y="260.66666666666669" width="333" height="98.333333333333314"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                             <connections>
@@ -66,8 +66,8 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="etK-dt-VdO"/>
                     </constraints>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signup for Undisturbed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6J-hu-7Kz">
-                    <rect key="frame" x="30" y="109" width="333" height="60"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up for Undisturbed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6J-hu-7Kz">
+                    <rect key="frame" x="30" y="119" width="333" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="cAH-o2-L38"/>
                     </constraints>
@@ -82,6 +82,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Already have an account? Log in instead."/>
+                    <connections>
+                        <action selector="toLoginBtnTapped:" destination="-1" eventType="touchUpInside" id="6cm-KP-UAp"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -96,7 +99,7 @@
                 <constraint firstItem="f6J-hu-7Kz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="MlG-UI-0CX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f6J-hu-7Kz" secondAttribute="trailing" constant="30" id="PKl-q7-tlv"/>
                 <constraint firstItem="c6r-UF-TUo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="T8U-Bu-RWF"/>
-                <constraint firstItem="f6J-hu-7Kz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="p7U-Dl-Apc"/>
+                <constraint firstItem="f6J-hu-7Kz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="p7U-Dl-Apc"/>
             </constraints>
             <point key="canvasLocation" x="22" y="20"/>
         </view>

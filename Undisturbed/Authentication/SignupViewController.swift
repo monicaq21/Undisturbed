@@ -21,6 +21,10 @@ class SignupViewController: UIViewController {
         errorLabel.isHidden = true
     }
     
+    @IBAction func toLoginBtnTapped(_ sender: Any) {
+        transitionToLoginScreen()
+    }
+    
     private func getEmailInvalidMessage() -> String? {
         guard let email = emailTextField.text?.trimmingCharacters(in: .whitespaces),
               email != ""
@@ -57,10 +61,10 @@ class SignupViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             guard error == nil
             else {
+                self?.errorLabel.isHidden = false
                 self?.errorLabel.text = "Sorry, sign up failed for internal reasons. Please try again in a bit."
                 return
             }
-            print("succeeded!")
             
             self?.transitionToHomeScreen()
             
@@ -71,6 +75,16 @@ class SignupViewController: UIViewController {
     private func transitionToHomeScreen() {
         DispatchQueue.main.async {
             let vc = UINavigationController(rootViewController: TabBarViewController())
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true) {
+                self.navigationController?.popToRootViewController(animated: false)
+            }
+        }
+    }
+    
+    private func transitionToLoginScreen() {
+        DispatchQueue.main.async {
+            let vc = UINavigationController(rootViewController: LoginViewController())
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true) {
                 self.navigationController?.popToRootViewController(animated: false)
