@@ -28,9 +28,8 @@ class TriggerCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.text = "Disgusting"
-//        label.font = UIFont.systemFont(ofSize: 9)
-        label.adjustsFontSizeToFitWidth = true
-        label.textColor = .systemGray
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = .systemGray3
         return label
     }()
     
@@ -38,9 +37,9 @@ class TriggerCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.text = "Bearable"
-//        label.font = UIFont.systemFont(ofSize: 9)
-        label.adjustsFontSizeToFitWidth = true
-        label.textColor = .systemGray
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .right
+        label.textColor = .systemGray3
         return label
     }()
     
@@ -73,13 +72,30 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        triggerLabel.frame = CGRect(x: 10, y: 0, width: contentView.width - 20, height: contentView.height / 3 * 2)
-        slider.frame = CGRect(x: 10, y: triggerLabel.bottom, width: contentView.width - 20, height: contentView.height / 3)
+        triggerLabel.frame = CGRect(x: 10, y: 0, width: contentView.width - 20, height: contentView.height / 2)
         
-        let labelsWidth = slider.width / 4
+        let labelsWidth = (contentView.width - 20) / 2.2
+        disgustingLabel.frame = CGRect(
+            x: 10,
+            y: triggerLabel.bottom + 20,
+            width: labelsWidth,
+            height: 20
+        )
+        bearableLabel.frame = CGRect(
+            x: contentView.right - 10 - labelsWidth,
+            y: triggerLabel.bottom + 20,
+            width: labelsWidth,
+            height: 20
+        )
         
-        disgustingLabel.frame = CGRect(x: slider.left, y: slider.top - 20, width: labelsWidth, height: 20)
-        bearableLabel.frame = CGRect(x: slider.right - labelsWidth, y: slider.top - 20, width: labelsWidth, height: 20)
+        slider.frame = CGRect(
+            x: 10,
+            y: disgustingLabel.bottom,
+            width: contentView.width - 20,
+            height: contentView.bottom - disgustingLabel.bottom
+        )
+        
+
     }
     
     override func prepareForReuse() {
