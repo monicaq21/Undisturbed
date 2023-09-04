@@ -67,6 +67,7 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func signOutBtnTapped() {
+        print("Signout button clicked")
         do {
             try Auth.auth().signOut()
             transitionToLoginScreen()

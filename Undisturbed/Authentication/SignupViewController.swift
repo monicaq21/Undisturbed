@@ -86,8 +86,17 @@ class SignupViewController: UIViewController {
         let misoScore = -1
         
         // set the values
-        userRef.child("triggers").setValue(triggersDict)
-        userRef.setValue(["misophonia_score": misoScore])
+        userRef.setValue(["misophonia_score": misoScore]) { error, _ in
+            if let error = error {
+                print("Error storing misophonia score: \(error.localizedDescription)")
+            }
+        }
+                         
+        userRef.child("triggers").setValue(triggersDict) { error, _ in
+            if let error = error {
+                print("Error storing triggers: \(error.localizedDescription)")
+            }
+        }
         
     }
     

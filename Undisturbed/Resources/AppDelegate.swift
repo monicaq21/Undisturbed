@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser != nil { // signed in
             window.rootViewController = TabBarViewController()
         } else {
-            window.rootViewController = SignupViewController()
+            window.rootViewController = LoginViewController()
         }
         window.makeKeyAndVisible()
         self.window = window

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class TriggersViewController: UIViewController {
     
@@ -54,11 +56,12 @@ class TriggersViewController: UIViewController {
     
     private func loadData() {
         // mock
-        triggers.append(Trigger(name: "Wet Chewing"))
-        triggers.append(Trigger(name: "Chalk Scratching"))
-        triggers.append(Trigger(name: "Yawning"))
-        triggers.append(Trigger(name: "Tapping"))
-        triggers.append(Trigger(name: "Sniffing"))
+        let ref = Database.database().reference()
+        if let userid = Auth.auth().currentUser?.uid {
+//            let dict = ref.child("users/\(userid)/triggers") get data
+            triggers = []
+        }
+        
         
         DispatchQueue.main.async {
             self.collectionView.reloadData() // refresh in main thread
