@@ -29,7 +29,6 @@ class TriggerCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 1
         label.text = "Disgusting"
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = .systemGray3
         return label
     }()
     
@@ -39,15 +38,18 @@ class TriggerCollectionViewCell: UICollectionViewCell {
         label.text = "Bearable"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textAlignment = .right
-        label.textColor = .systemGray3
         return label
     }()
+    
+    var previousSliderValue: Int = 3
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         contentView.layer.cornerRadius = 15
         contentView.layer.masksToBounds = true
+        
+        contentView.addGradientBackground(colors: [.systemPink, .white])
         
         contentView.addSubview(triggerLabel)
         contentView.addSubview(slider)
@@ -59,10 +61,15 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     
     @objc private func sliderValueChanged() {
         let value = slider.value
-        let nearestValue = floor(value + 0.5)
-        slider.setValue(nearestValue, animated: false)
-//        delegate.updatePreferenceValue(to: value) xxx
-        updateBackgroundColor()
+        let nearestValue = Int(floor(value + 0.5))
+        
+        if (nearestValue != previousSliderValue) {
+            previousSliderValue = nearestValue
+            slider.setValue(Float(nearestValue), animated: false)
+            //        delegate.updatePreferenceValue(to: value) xxx
+            updateBackgroundColor()
+        }
+        
     }
     
     required init?(coder: NSCoder) {
@@ -105,6 +112,7 @@ class TriggerCollectionViewCell: UICollectionViewCell {
     func configure(with model: Trigger) {
         triggerLabel.text = model.name
         slider.value = 2 // xxx change later
+        previousSliderValue = 2 // xxx change later
         updateBackgroundColor()
     }
     
@@ -112,17 +120,21 @@ class TriggerCollectionViewCell: UICollectionViewCell {
         let value = slider.value
         
         DispatchQueue.main.async {
+            var colors = [UIColor]()
+            
             if (value == 5) {
-                self.contentView.backgroundColor = .blue
+                colors = [.systemBlue, .white]
             } else if (value == 4) {
-                self.contentView.backgroundColor = .green
+                colors = [UIColor.systemBlue.withAlphaComponent(0.5), .white]
             } else if (value == 3) {
-                self.contentView.backgroundColor = .yellow
+                colors = [UIColor.systemBlue.withAlphaComponent(0.5), UIColor.systemPink.withAlphaComponent(0.5)]
             } else if (value == 2) {
-                self.contentView.backgroundColor = .orange
+                colors = [UIColor.systemPink.withAlphaComponent(0.5), .white]
             } else if (value == 1) {
-                self.contentView.backgroundColor = .red
+                colors = [UIColor.systemPink, .white]
             }
+            
+            self.contentView.replaceGradientBackground(colors: colors)
         }
         
     }
