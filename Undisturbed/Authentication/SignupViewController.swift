@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class SignupViewController: UIViewController {
 
@@ -59,17 +60,54 @@ class SignupViewController: UIViewController {
         }
         
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
-            guard error == nil
+            guard let result = result,
+                  error == nil
             else {
                 self?.errorLabel.isHidden = false
-                self?.errorLabel.text = "Sorry, sign up failed for internal reasons. Please try again in a bit."
+                self?.errorLabel.text = "Sorry, sign up failed for internal reasons. Please try again in a bit." // make pw better
                 return
             }
             
+            self?.setupNewUserInfo(id: result.user.uid)
             self?.transitionToHomeScreen()
             
         }
         
+    }
+    
+    private func setupNewUserInfo(id: String) {
+        
+        let userRef = Database.database().reference(withPath: "users").child(id)
+        
+        // their trigger sound preferences
+        let triggersDict = makeTriggersDictionary()
+        
+        // their misophonia score
+        let misoScore = -1
+        
+        // set the values
+        userRef.child("triggers").setValue(triggersDict)
+        userRef.setValue(["misophonia_score": misoScore])
+        
+    }
+    
+    private func makeTriggersDictionary() -> [String: [String: Any]] {
+        
+        var triggers = [Trigger]()
+        triggers.append(Trigger(name: "Wet Chewing"))
+        triggers.append(Trigger(name: "Chalk Scratching"))
+        triggers.append(Trigger(name: "Yawning"))
+        triggers.append(Trigger(name: "Tapping"))
+        triggers.append(Trigger(name: "Sniffing"))
+        
+        var triggersDict = [String: [String: Any]]()
+        for i in (0..<triggers.count) {
+            triggersDict["\(i)"] = [
+                "name": triggers[i].name,
+                "score": 3
+            ]
+        }
+        return triggersDict
     }
     
     private func transitionToHomeScreen() {

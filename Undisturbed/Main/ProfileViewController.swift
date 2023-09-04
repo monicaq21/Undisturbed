@@ -7,10 +7,18 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class ProfileViewController: UIViewController {
     
     let emailLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.textColor = .black
+        return label
+    }()
+    
+    let misoScoreLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.textColor = .black
@@ -34,6 +42,18 @@ class ProfileViewController: UIViewController {
         } else {
             emailLabel.text = "Email: Unknown"
         }
+        
+        view.addSubview(misoScoreLabel)
+//        if let userid = Auth.auth().currentUser?.uid,
+//           let misoScore = Database.database().reference(withPath: "users").child(userid).value(forKey: "misophonia_score") as? Int {
+//            if misoScore == -1 {
+//                misoScoreLabel.text = "Your Misophonia Score: (haven't taken yet)"
+//            } else {
+//                misoScoreLabel.text = "Your Misophonia Score: \(misoScore)"
+//            }
+//        } else {
+//            emailLabel.text = "Your Misophonia Score: backend error..."
+//        }
         
         view.addSubview(signoutBtn)
         signoutBtn.addTarget(self, action: #selector(signOutBtnTapped), for: .touchUpInside)
