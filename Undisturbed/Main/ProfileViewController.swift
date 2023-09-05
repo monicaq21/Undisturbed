@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Firebase
 
 class ProfileViewController: UIViewController {
     
@@ -37,7 +35,7 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubview(emailLabel)
-        if let email = Auth.auth().currentUser?.email {
+        if let email = APICaller.shared.currentUser?.email {
             emailLabel.text = "Email: \(email)"
         } else {
             emailLabel.text = "Email: Unknown"
@@ -67,13 +65,25 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func signOutBtnTapped() {
-        print("Signout button clicked")
-        do {
-            try Auth.auth().signOut()
-            transitionToLoginScreen()
-        } catch {
-            print("Signout failed")
+        APICaller.shared.signOut { [weak self] success in
+            guard let self else { return }
+            
+            DispatchQueue.main.async {
+                if success {
+                    self.transitionToLoginScreen()
+                } else {
+                    self.showSignOutFailedAlert()
+                }
+            }
+
         }
+    }
+    
+    private func showSignOutFailedAlert() {
+        let alert = UIAlertController(title: "Failed to Sign Out", message: "Please check your network and try again later.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
     }
     
     private func transitionToLoginScreen() {

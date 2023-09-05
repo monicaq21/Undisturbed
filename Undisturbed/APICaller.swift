@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 import FirebaseAuth
 
 struct APICaller {
@@ -14,6 +15,9 @@ struct APICaller {
     enum APIError: Error {
         case failedToGetData
     }
+    
+    let currentUser: User? = Auth.auth().currentUser
+    let db: Database = Database.database()
     
     func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
@@ -33,4 +37,14 @@ struct APICaller {
             
         }
     }
+    
+    func signOut(completion: @escaping (Bool) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(true)
+        } catch {
+            completion(false)
+        }
+    }
+    
 }

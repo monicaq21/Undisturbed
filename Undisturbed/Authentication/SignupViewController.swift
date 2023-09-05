@@ -80,7 +80,7 @@ class SignupViewController: UIViewController {
     
     private func setupNewUserInfo(id: String) {
         
-        let userRef = Database.database().reference(withPath: "users").child(id)
+        let userRef = APICaller.shared.db.reference(withPath: "users").child(id)
         
         // their trigger sound preferences
         let triggersDict = makeTriggersDictionary()
@@ -100,7 +100,6 @@ class SignupViewController: UIViewController {
                 print("Error storing triggers: \(error.localizedDescription)")
             }
         }
-        
     }
     
     private func makeTriggersDictionary() -> [String: [String: Any]] {
