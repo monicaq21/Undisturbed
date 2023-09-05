@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -26,14 +25,16 @@ class LoginViewController: UIViewController {
               let password = passwordTextField.text
         else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-            guard error == nil else {
-                self?.errorLabel.isHidden = false
-                self?.errorLabel.text = "The email or password you entered is incorrect."
-                return
+        APICaller.shared.signIn(email: email, password: password) { [weak self] success in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                if success {
+                    self.transitionToHomeScreen()
+                } else {
+                    self.errorLabel.isHidden = false
+                    self.errorLabel.text = "The email or password you entered is incorrect."
+                }
             }
-            
-            self?.transitionToHomeScreen()
         }
     }
     

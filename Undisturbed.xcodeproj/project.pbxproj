@@ -26,6 +26,7 @@
 		8D91A8352AA2ADE3005EED2A /* TriggerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A8342AA2ADE3005EED2A /* TriggerCollectionViewCell.swift */; };
 		8D91A8372AA2C904005EED2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A8362AA2C904005EED2A /* Extensions.swift */; };
 		8D91A83C2AA431C6005EED2A /* SceneOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91A83B2AA431C6005EED2A /* SceneOption.swift */; };
+		8DB320D92AA78D7A00DF5FD0 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB320D82AA78D7A00DF5FD0 /* APICaller.swift */; };
 		8DCD56672AA5233400683D19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD56652AA5233400683D19 /* LoginViewController.swift */; };
 		8DCD56682AA5233400683D19 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD56662AA5233400683D19 /* LoginViewController.xib */; };
 		8DCD566B2AA5234100683D19 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD56692AA5234100683D19 /* SignupViewController.swift */; };
@@ -50,6 +51,7 @@
 		8D91A8342AA2ADE3005EED2A /* TriggerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8D91A8362AA2C904005EED2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8D91A83B2AA431C6005EED2A /* SceneOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneOption.swift; sourceTree = "<group>"; };
+		8DB320D82AA78D7A00DF5FD0 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		8DCD56652AA5233400683D19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8DCD56662AA5233400683D19 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		8DCD56692AA5234100683D19 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				8D91A8382AA43173005EED2A /* Soothe */,
 				8D91A8312AA2AD10005EED2A /* Triggers */,
 				8D91A8272AA2A738005EED2A /* Resources */,
+				8DB320D82AA78D7A00DF5FD0 /* APICaller.swift */,
 			);
 			path = Undisturbed;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				8D91A8302AA2AA1B005EED2A /* ProfileViewController.swift in Sources */,
 				8D91A8372AA2C904005EED2A /* Extensions.swift in Sources */,
 				8D91A82C2AA2A93F005EED2A /* TabBarViewController.swift in Sources */,
+				8DB320D92AA78D7A00DF5FD0 /* APICaller.swift in Sources */,
 				8D91A82A2AA2A937005EED2A /* SootheViewController.swift in Sources */,
 				8D91A83C2AA431C6005EED2A /* SceneOption.swift in Sources */,
 				8D91A8142AA2A695005EED2A /* AppDelegate.swift in Sources */,

@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Firebase
 
 class SignupViewController: UIViewController {
 
@@ -59,18 +57,23 @@ class SignupViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
-            guard let result = result,
-                  error == nil
-            else {
-                self?.errorLabel.isHidden = false
-                self?.errorLabel.text = "Sorry, sign up failed for internal reasons. Please try again in a bit." // make pw better
-                return
+        APICaller.shared.signUp(email: email, password: password) { [weak self] result in
+            guard let self else { return }
+            
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let authResult):
+                    self.setupNewUserInfo(id: authResult.user.uid)
+                    self.transitionToHomeScreen()
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.errorLabel.isHidden = false
+                    self.errorLabel.text = "Sorry, sign up failed for internal reasons. Please try again in a bit." // make pw better
+                    return
+                }
             }
-            
-            self?.setupNewUserInfo(id: result.user.uid)
-            self?.transitionToHomeScreen()
-            
+
         }
         
     }
